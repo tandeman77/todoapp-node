@@ -1,6 +1,6 @@
 const express = require('express');
 const app = express();
-const port = process.env.port || 3000;
+const PORT = process.env.PORT || 3000;
 const middleware = require('./middleware.js');
 
 
@@ -13,5 +13,5 @@ app.get('/about', middleware.requireAuthentication, (req, res) => {
 app.use(express.static(__dirname + '/public'));
 
 app.listen(port, () => {
-  console.log('Express server started on ' + port);
+  console.log('Express server started on ' + PORT);
 });
